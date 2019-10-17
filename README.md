@@ -1,13 +1,13 @@
 <h1 align="center"> Alipay </h1>
 
 [![Build Status](https://travis-ci.org/kaylyu/laravel-alipay.svg?branch=master)](https://travis-ci.org/kaylyu/laravel-alipay)
-[![Latest Stable Version](https://poser.pugx.org/kaylyu/alipay/v/stable)](https://packagist.org/packages/kaylyu/alipay)
-[![Latest Unstable Version](https://poser.pugx.org/kaylyu/alipay/v/unstable)](https://packagist.org/packages/kaylyu/alipay)
-[![Total Downloads](https://poser.pugx.org/kaylyu/alipay/downloads)](https://packagist.org/packages/kaylyu/alipay)
-[![License](https://poser.pugx.org/kaylyu/alipay/license)](https://packagist.org/packages/kaylyu/alipay)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kaylyu/alipay/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/alipay/?branch=master) 
-[![Code Coverage](https://scrutinizer-ci.com/g/kaylyu/alipay/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/alipay/?branch=master) 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkaylyu%2Falipay.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkaylyu%2Falipay?ref=badge_shield)
+[![Latest Stable Version](https://poser.pugx.org/kaylyu/laravel-alipay/v/stable)](https://packagist.org/packages/kaylyu/laravel-alipay)
+[![Latest Unstable Version](https://poser.pugx.org/kaylyu/laravel-alipay/v/unstable)](https://packagist.org/packages/kaylyu/laravel-alipay)
+[![Total Downloads](https://poser.pugx.org/kaylyu/laravel-alipay/downloads)](https://packagist.org/packages/kaylyu/laravel-alipay)
+[![License](https://poser.pugx.org/kaylyu/laravel-alipay/license)](https://packagist.org/packages/kaylyu/laravel-alipay)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/?branch=master) 
+[![Code Coverage](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/?branch=master) 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkaylyu%2Flaravel-alipay.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkaylyu%2Flaravel-alipay?ref=badge_shield)
 
 基于Laravel框架的支付宝支付SDK，目前仅支持当面付
 
