@@ -5,8 +5,8 @@
 [![Latest Unstable Version](https://poser.pugx.org/kaylyu/laravel-alipay/v/unstable)](https://packagist.org/packages/kaylyu/laravel-alipay)
 [![Total Downloads](https://poser.pugx.org/kaylyu/laravel-alipay/downloads)](https://packagist.org/packages/kaylyu/laravel-alipay)
 [![License](https://poser.pugx.org/kaylyu/laravel-alipay/license)](https://packagist.org/packages/kaylyu/laravel-alipay)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/?branch=master) 
-[![Code Coverage](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/aravel-alipay/?branch=master) 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/kaylyu/laravel-alipay/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/laravel-alipay/?branch=master) 
+[![Code Coverage](https://scrutinizer-ci.com/g/kaylyu/laravel-alipay/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/kaylyu/laravel-alipay/?branch=master) 
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkaylyu%2Flaravel-alipay.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkaylyu%2Flaravel-alipay?ref=badge_shield)
 
 基于Laravel框架的支付宝支付SDK，目前仅支持当面付
