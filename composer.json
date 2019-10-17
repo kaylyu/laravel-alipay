@@ -1,0 +1,62 @@
+{
+    "name": "kaylyu/laravel-alipay",
+    "description": "支付宝支付SDK",
+    "authors": [
+        {
+            "name": "kaylyu",
+            "email": "kaylyu@163.com"
+        }
+    ],
+    "keywords": [
+        "alipay",
+        "alipay-sdk",
+        "laravel-alipay"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "monolog/monolog": "^1.22",
+        "pimple/pimple": "^3.0",
+        "symfony/http-foundation": "^2.7 || ^3.0 || ^4.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "~7.5",
+        "fzaninotto/faker": "~1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kaylyu\\Alipay\\": "src/"
+        },
+        "files": [
+            "src/Kernel/Support/Helpers.php",
+            "src/Kernel/Helpers.php",
+            "src/F2fpay/Base/Aop/AopEncrypt.php",
+            "src/F2fpay/Kernel/Support/Helpers.php",
+            "src/F2fpay/Kernel/Support/Trade.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kaylyu\\Alipay\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": []
+        }
+    },
+    "repositories":[
+        {
+            "packagist":false
+        },
+        {
+            "type":"composer",
+            "url":"https://mirrors.aliyun.com/composer/"
+        }
+    ]
+}
