@@ -5,7 +5,6 @@ namespace Kaylyu\Alipay\F2fpay\Notify;
 use Closure;
 use Exception;
 use Kaylyu\Alipay\F2fpay\Kernel\AopClient;
-use Kaylyu\Alipay\Kernel\Support\Arr;
 
 class Paid extends Handler
 {
