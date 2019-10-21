@@ -19,7 +19,7 @@ class ServiceProvider extends LaravelServiceProvider
         }
 
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/kaylu-alipay.php', 'kaylu-alipay'
+            __DIR__ . '/../../config/kaylu-alipay.php', 'kaylu-alipay'
         );
 
         $this->app->singleton('kaylu.alipay.f2fpay', function ($app) {
