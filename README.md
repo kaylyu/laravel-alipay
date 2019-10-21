@@ -14,7 +14,7 @@
 ## Installation
 
 ```shell
-$ composer require "kaylyu/alipay:~1.0" -vvv
+$ composer require kaylyu/laravel-alipay:~1.0" -vvv
 ```
 ## Config
 - 配置 可以拷贝config/kaylu-alipay.php 到 laravel 目录config下面
