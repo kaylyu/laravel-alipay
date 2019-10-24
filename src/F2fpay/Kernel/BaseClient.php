@@ -56,7 +56,8 @@ class BaseClient
      * @param string $method
      * @param null $appAuthToken
      * @author kaylv <kaylv@dayuw.com>
-     * @return array|Collection|string
+     * @return array|bool|Collection|mixed|object|ResponseInterface|\SimpleXMLElement|string
+     * @throws Exception
      */
     public function request($request, string $method = 'GET', $appAuthToken = null)
     {
@@ -80,7 +81,12 @@ class BaseClient
         //验签解密
         $response = $aop->responseHandle($request, $response->getBody()->getContents());
 
-        //
+        //校验
+        if(isset($response->null_response)){
+            throw new Exception('系统繁忙！！！');
+        }
+
+
         return $response;
     }
 

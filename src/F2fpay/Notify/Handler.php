@@ -3,9 +3,7 @@
 namespace Kaylyu\Alipay\F2fpay\Notify;
 
 use Closure;
-use Exception;
-use Kaylyu\Alipay\Kernel\Support\Arr;
-use Kaylyu\Alipay\Kernel\Support\XML;
+use Kaylyu\Alipay\Kernel\Exceptions\Exception;
 
 abstract class Handler
 {
