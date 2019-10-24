@@ -27,6 +27,12 @@ class GoodsDetail
 
     private $goodsDetail = array();
 
+    //商品的展示地址
+    private $showUrl;
+
+    //商品类目树
+    private $categoriesTree;
+
     //单个商品json字符串
     //private $goodsDetailStr = NULL;
 
@@ -107,6 +113,28 @@ class GoodsDetail
     public function getGoodsCategory()
     {
         return $this->goodsCategory;
+    }
+
+    public function setGoodsShowUrl($showUrl)
+    {
+        $this->showUrl = $showUrl;
+        $this->goodsDetail['show_url'] = $showUrl;
+    }
+
+    public function getGoodsShowUrl()
+    {
+        return $this->showUrl;
+    }
+
+    public function setGoodsCategoryTree($categoriesTree)
+    {
+        $this->categoriesTree = $categoriesTree;
+        $this->goodsDetail['categories_tree'] = $categoriesTree;
+    }
+
+    public function getGoodsCategoryTree()
+    {
+        return $this->categoriesTree;
     }
 
     public function setBody($body)
