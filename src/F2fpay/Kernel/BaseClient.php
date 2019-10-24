@@ -83,7 +83,7 @@ class BaseClient
 
         //校验
         if(isset($response->null_response)){
-            throw new Exception('系统繁忙！！！');
+            throw new Exception('系统繁忙！！！', 500);
         }
 
 
