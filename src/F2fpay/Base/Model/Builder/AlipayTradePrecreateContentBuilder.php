@@ -56,6 +56,9 @@ class AlipayTradePrecreateContentBuilder extends ContentBuilder
     // (推荐使用，相对时间) 支付超时时间，5m 5分钟
     private $timeExpress;
 
+    // ISV （独立软件开发商）
+    private $sysServiceProviderId;
+
     private $bizContent = null;
 
     private $bizParas = array();
@@ -169,6 +172,17 @@ class AlipayTradePrecreateContentBuilder extends ContentBuilder
     public function getStoreId()
     {
         return $this->storeId;
+    }
+
+    public function getSysServiceProviderId()
+    {
+        return $this->sysServiceProviderId;
+    }
+
+    public function setSysServiceProviderId($sysServiceProviderId)
+    {
+        $this->sysServiceProviderId = $sysServiceProviderId;
+        $this->bizParas['sys_service_provider_id'] = $sysServiceProviderId;
     }
 
     public function setTerminalId($terminalId)

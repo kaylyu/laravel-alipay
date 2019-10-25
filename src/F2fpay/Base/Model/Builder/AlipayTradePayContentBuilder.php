@@ -243,7 +243,7 @@ class AlipayTradePayContentBuilder extends ContentBuilder
     public function setSysServiceProviderId($sysServiceProviderId)
     {
         $this->sysServiceProviderId = $sysServiceProviderId;
-        $this->bizParas['sysServiceProviderId'] = $sysServiceProviderId;
+        $this->bizParas['sys_service_provider_id'] = $sysServiceProviderId;
     }
 
     public function getExtendParams()
