@@ -90,7 +90,7 @@ class BaseClient
         }
 
         //验签解密
-        $response = $aop->responseHandle($request, $response->getBody()->getContents());
+        $response = $aop->responseHandle($request, $response);
 
         return $response;
     }
