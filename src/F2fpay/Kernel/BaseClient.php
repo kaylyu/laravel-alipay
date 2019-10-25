@@ -78,13 +78,13 @@ class BaseClient
         }
         $response = $this->performRequest($requestUrl, $method, [$key => $apiParams]);
 
-        //验签解密
-        $response = $aop->responseHandle($request, $response->getBody()->getContents());
-
         //校验
         if(isset($response->null_response)){
             throw new Exception('系统繁忙！！！', $response->null_response->code);
         }
+
+        //验签解密
+        $response = $aop->responseHandle($request, $response->getBody()->getContents());
 
         return $response;
     }
