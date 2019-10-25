@@ -78,9 +78,15 @@ class BaseClient
         }
         $response = $this->performRequest($requestUrl, $method, [$key => $apiParams]);
 
+        //读取内容
+        $response = $response->getBody()->getContents();
+
+        //解析
+        $rs = json_decode($response);
+
         //校验
-        if(isset($response->null_response)){
-            throw new Exception('系统繁忙！！！', $response->null_response->code);
+        if(isset($rs->null_response)){
+            throw new Exception('系统繁忙！！！', $rs->null_response->code);
         }
 
         //验签解密
