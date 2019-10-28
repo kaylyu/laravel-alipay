@@ -2,8 +2,10 @@
 
 namespace  Kaylyu\Alipay\F2fpay\Refund;
 
+use Kaylyu\Alipay\F2fpay\Base\Aop\Request\AlipayTradeRefundQueryRequest;
 use Kaylyu\Alipay\F2fpay\Base\Aop\Request\AlipayTradeRefundRequest;
 use Kaylyu\Alipay\F2fpay\Base\Model\Builder\AlipayTradeRefundContentBuilder;
+use Kaylyu\Alipay\F2fpay\Base\Model\Builder\AlipayTradeRefundQueryContentBuilder;
 use Kaylyu\Alipay\F2fpay\Base\Model\Result\AlipayF2FPayResult;
 use Kaylyu\Alipay\F2fpay\Kernel\BaseClient;
 use function Kaylyu\Alipay\F2fpay\Kernel\Support\tradeError;
@@ -37,6 +39,48 @@ class Client extends BaseClient
 
         //获取
         $data = $response->alipay_trade_refund_response;
+        $sign = $response->sign;
+
+        //组装返回数据
+        $result = new AlipayF2FPayResult($data, $sign);
+
+        //处理
+        if (tradeSuccess($data)) {
+            // 查询返回该订单交易支付成功
+            $result->setTradeStatus(AlipayF2FPayResult::ALIPAY_F2FPAY_RESULT_SUCCESS);
+        } elseif (tradeError($data)) {
+            //查询发生异常或无返回，交易状态未知
+            $result->setTradeStatus(AlipayF2FPayResult::ALIPAY_F2FPAY_RESULT_UNKNOWN);
+        } else {
+            //其他情况均表明该订单号交易失败
+            $result->setTradeStatus(AlipayF2FPayResult::ALIPAY_F2FPAY_RESULT_FAILED);
+        }
+
+        return $this->formatResponseToType($result);
+    }
+
+    /**
+     * 统一收单交易退款查询
+     *
+     * 商户可使用该接口查询自已通过alipay.trade.refund或alipay.trade.refund.apply提交的退款请求是否执行成功。
+     * 该接口的返回码10000，仅代表本次查询操作成功，不代表退款成功。
+     * 如果该接口返回了查询数据，且refund_status为空或为REFUND_SUCCESS，则代表退款成功，
+     * 如果没有查询到则代表未退款成功，可以调用退款接口进行重试。重试时请务必保证退款请求号一致
+     *
+     * @param AlipayTradeRefundQueryContentBuilder $builder
+     * @author kaylv <kaylv@dayuw.com>
+     * @return array|\Kaylyu\Alipay\Kernel\Support\Collection|string
+     */
+    public function query(AlipayTradeRefundQueryContentBuilder $builder)
+    {
+        $request = new AlipayTradeRefundQueryRequest();
+        $request->setBizContent($builder->getBizContent());
+
+        //请求
+        $response = $this->httpPost($request, $builder->getAppAuthToken());
+
+        //获取
+        $data = $response->alipay_trade_fastpay_refund_query_response;
         $sign = $response->sign;
 
         //组装返回数据

@@ -12,6 +12,7 @@ namespace Kaylyu\Alipay\Tests\Refund;
 use Faker\Factory;
 use Kaylyu\Alipay\F2fpay\Application;
 use Kaylyu\Alipay\F2fpay\Base\Model\Builder\AlipayTradeRefundContentBuilder;
+use Kaylyu\Alipay\F2fpay\Base\Model\Builder\AlipayTradeRefundQueryContentBuilder;
 use Kaylyu\Alipay\Tests\TestCase;
 
 class ClientTest extends TestCase
@@ -84,5 +85,19 @@ class ClientTest extends TestCase
         var_dump($response->tradeStatus);//此值可以与AlipayF2FPayResult定义的常量进行对比，判断响应数据是否正常
         var_dump($response->response->code);
         var_dump($response->sign);
+    }
+
+    /**
+     * 统一收单交易退款查询
+     * @author kaylv <kaylv@dayuw.com>
+     */
+    public function testQuery(){
+        $refundRequestBuilder = new AlipayTradeRefundQueryContentBuilder();
+        $refundRequestBuilder->setOutTradeNo('98384420395');
+        $refundRequestBuilder->setOutRequestNo('78887839186');
+
+        //请求
+        $response = $this->application->refund->query($refundRequestBuilder);
+        var_dump($response);
     }
 }
