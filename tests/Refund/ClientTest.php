@@ -91,7 +91,7 @@ class ClientTest extends TestCase
      * 统一收单交易退款查询
      * @author kaylv <kaylv@dayuw.com>
      */
-    public function testQuery(){
+    public function Query(){
         $refundRequestBuilder = new AlipayTradeRefundQueryContentBuilder();
         $refundRequestBuilder->setOutTradeNo('98384420395');
         $refundRequestBuilder->setOutRequestNo('78887839186');
