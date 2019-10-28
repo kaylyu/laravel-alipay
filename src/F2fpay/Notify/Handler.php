@@ -8,6 +8,7 @@ use Kaylyu\Alipay\Kernel\Exceptions\Exception;
 abstract class Handler
 {
     const SUCCESS = 'success';
+    const FAILED = 'failed';
 
     /**
      * @var
@@ -77,7 +78,7 @@ abstract class Handler
      */
     public function toResponse()
     {
-        return self::SUCCESS;
+        return is_null($this->fail) ? self::SUCCESS : self::FAILED;
     }
 
     /**
